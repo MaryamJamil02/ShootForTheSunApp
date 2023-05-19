@@ -179,6 +179,9 @@ class TableViewModel : ViewModel() {
             }
 
             for (date in sameDaysList.sorted()){
+                println(tableUIState.value.timeZoneListTableScreen[(date.toString().split("-")[1]).toInt()-1])
+
+
 
                 if (tableUIState.value.chosenSunType == "Sunrise"){
                     sunRiseTime = dataSource.fetchSunrise3Data("sun", tableUIState.value.location.latitude, tableUIState.value.location.longitude, date.toString(), tableUIState.value.offsetStringForApi).properties.sunrise.time
